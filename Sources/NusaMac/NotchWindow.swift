@@ -25,10 +25,11 @@ final class NotchWindow: NSWindow {
 
     override var canBecomeKey: Bool { true }
 
-    /// True on MacBooks with a camera notch: the window's safe-area top inset
-    /// is only non-zero there. Only meaningful once the window is on screen.
+    /// True on MacBooks with a camera notch: the screen's safe-area top
+    /// inset is only non-zero there. (safeAreaInsets lives on NSScreen /
+    /// NSView, not on NSWindow.)
     var hasNotch: Bool {
-        safeAreaInsets.top > 0
+        (screen ?? NSScreen.main)?.safeAreaInsets.top ?? 0 > 0
     }
 
     func installTracking() {
@@ -104,7 +105,7 @@ final class NotchController: ObservableObject {
     /// to the notch height so it sits flush in the notch area.
     func reposition() {
         guard let window = window, let screen = window.screen ?? NSScreen.main else { return }
-        let notchTop = window.safeAreaInsets.top
+        let notchTop = screen.safeAreaInsets.top
         hasNotch = notchTop > 0
         if hasNotch {
             collapsedHeight = max(Self.collapsedSize.height, notchTop)
