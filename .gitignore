@@ -1,0 +1,6 @@
+.build/
+NusaMac.app/
+NusaMac.dmg
+*.xcodeproj/
+xcuserdata/
+DerivedData/

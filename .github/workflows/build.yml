@@ -1,0 +1,21 @@
+name: Build NusaMac
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show Swift version
+        run: swift --version
+      - name: Build DMG
+        run: ./build.sh
+      - name: Upload DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: NusaMac-dmg
+          path: NusaMac.dmg

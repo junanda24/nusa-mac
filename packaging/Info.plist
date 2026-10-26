@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>NusaMac</string>
+    <key>CFBundleDisplayName</key>
+    <string>NusaMac</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.nusamac.app</string>
+    <key>CFBundleExecutable</key>
+    <string>NusaMac</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <!-- Agent app: no Dock icon. The app is controlled from its menu-bar item. -->
+    <key>LSUIElement</key>
+    <true/>
+    <key>LSMinimumSystemVersion</key>
+    <string>13.0</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <!-- Shown in the Automation prompt when NusaMac first talks to Music/Spotify. -->
+    <key>NSAppleEventsUsageDescription</key>
+    <string>NusaMac membaca lagu yang sedang diputar dan mengontrol pemutaran di aplikasi Music dan Spotify.</string>
+</dict>
+</plist>
